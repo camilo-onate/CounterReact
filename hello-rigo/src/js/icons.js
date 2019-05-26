@@ -1,8 +1,8 @@
-import fontsawesome from '@fortawesome/fontawesome';
+import fontawesome from '@fortawesome/fontawesome';
 
 import faClock from '@fortawesome/fontawesome-free-regular/faClock';
 
-fontsawesome.config = {
+fontawesome.config = {
     autoReplaceSvg: 'nest'
 }
-fontsawesome.library.add(faClock);
+fontawesome.library.add(faClock);
