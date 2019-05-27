@@ -1,7 +1,7 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
-import PropType from "props-types";
+import PropTypes from "prop-types";
 
 //include bootstrap npm library into the bundle
 import "bootstrap";
@@ -17,25 +17,38 @@ function SimpleCounter(props){
             <div className="calendar">
                 <i class="far fa-clock"></i>
             </div>
-            <div className="secondsSeven">{props.digitSeven}</div>
-            <div className="secondsSix">{props.digitSix}</div>
-            <div className="secondsFive">{props.digitFive}</div>
-            <div className="secondsFour">{props.digitFour}</div>
-            <div className="secondsThree">{props.digitThree}</div>
-            <div className="secondsTwo">{props.digitTwo}</div>
-            <div className="secondsOne">{props.digitOne}</div>
+            <div className="secondsSeven">{props.digitSeven%6}</div>
+            <div className="secondsSix">{props.digitSix%6}</div>
+            <div className="secondsFive">{props.digitFive%6}</div>
+            <div className="secondsFour">{props.digitFour%6}</div>
+            <div className="secondsThree">{props.digitThree%6}</div>
+            <div className="secondsTwo">{props.digitTwo%6}</div>
+            <div className="secondsOne">{props.digitOne%6}</div>
     </div>);
 }
 
+SimpleCounter.propTypes = {
+    digitOne: PropTypes.number,
+    digitTwo: PropTypes.number,
+    digitThree: PropTypes.number,
+    digitFour: PropTypes.number,
+    digitFive: PropTypes.number,
+    digitSix: PropTypes.number,
+    digitSeven: PropTypes.number
+};
+
 let count= 0;
 setInterval(function(){
-const seven=Math.floor(counter/10000000);
-const six=Math.floor(counter/1000000);
-const five=Math.floor(counter/100000);
-const four=Math.floor(counter/10000);
-const three=Math.floor(counter/1000);
-const two=Math.floor(counter/100);
-const one=Math.floor(counter/10);
-//render your react application
-ReactDOM.render(<SimpleCounter digitOne={}/>, document.querySelector("#app"));
+const seven=Math.floor(counter/1000000);
+const six=Math.floor(counter/100000);
+const five=Math.floor(counter/10000);
+const four=Math.floor(counter/1000);
+const three=Math.floor(counter/100);
+const two=Math.floor(counter/10);
+const one=Math.floor(counter/1);
+ReactDOM.render(<SimpleCounter digitOne={one} digitTwo={two} digitThree={three} digitFour={four}
+digitFive={five} digitSix={six} digitSeven={seven}/>, document.querySelector("#app"));
+count++;
 },1000);
+//render your react application
+
