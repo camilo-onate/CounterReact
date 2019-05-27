@@ -17,13 +17,13 @@ function SimpleCounter(props){
             <div className="calendar">
                 <i class="far fa-clock"></i>
             </div>
-            <div className="secondsSeven">{props.digitSeven%6}</div>
-            <div className="secondsSix">{props.digitSix%6}</div>
-            <div className="secondsFive">{props.digitFive%6}</div>
-            <div className="secondsFour">{props.digitFour%6}</div>
-            <div className="secondsThree">{props.digitThree%6}</div>
-            <div className="secondsTwo">{props.digitTwo%6}</div>
-            <div className="secondsOne">{props.digitOne%6}</div>
+            <div className="secondsSeven">{props.digitSeven%10}</div>
+            <div className="secondsSix">{props.digitSix%10}</div>
+            <div className="secondsFive">{props.digitFive%10}</div>
+            <div className="secondsFour">{props.digitFour%10}</div>
+            <div className="secondsThree">{props.digitThree%10}</div>
+            <div className="secondsTwo">{props.digitTwo%10}</div>
+            <div className="secondsOne">{props.digitOne%10}</div>
     </div>);
 }
 
